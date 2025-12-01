@@ -5,6 +5,7 @@ interface CartContextType {
   cart: CartItem[];
   addToCart: (product: Product, quantity: number, color?: string) => void;
   removeFromCart: (productId: string) => void;
+  clearCart: () => void;
   totalItems: number;
   cartTotal: number;
   toggleCart: () => void;
@@ -36,13 +37,17 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     setCart((prev) => prev.filter((item) => item.id !== id));
   };
 
+  const clearCart = () => {
+    setCart([]);
+  };
+
   const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
   const cartTotal = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
   const toggleCart = () => setIsCartOpen(!isCartOpen);
 
   return (
-    <CartContext.Provider value={{ cart, addToCart, removeFromCart, totalItems, cartTotal, toggleCart, isCartOpen }}>
+    <CartContext.Provider value={{ cart, addToCart, removeFromCart, clearCart, totalItems, cartTotal, toggleCart, isCartOpen }}>
       {children}
     </CartContext.Provider>
   );
