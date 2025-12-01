@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Viiva Voil | Acessórios Encantadores</title>
     
-    <!-- Tailwind CSS -->
+    <!-- Tailwind CSS (CDN mantido para garantir estilos rápidos sem setup complexo de PostCSS neste momento, mas o ideal para produção seria removê-lo e usar o pacote) -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -16,15 +16,13 @@
               sans: ['"Lato"', 'sans-serif'],
             },
             colors: {
-              // Paleta Viiva Voil
-              // Substituindo a paleta 'rose' pela cor da marca (#967336) para manter a consistência nas classes existentes
               rose: {
                 50: '#fcfbf9',  
                 100: '#f5f0e6', 
                 200: '#e6d8c0', 
                 300: '#d1b990', 
                 400: '#b89966', 
-                500: '#967336', // COR PRIMÁRIA DA MARCA - Dourado/Bronze
+                500: '#967336', // Viiva Voil Gold
                 600: '#7d5d2b', 
                 700: '#634824',
                 800: '#4a361f',
@@ -40,13 +38,13 @@
                 600: '#57534e',
                 700: '#44403c',
                 800: '#292524',
-                900: '#1c1917', // Preto suave
-                950: '#000000', // Preto absoluto
+                900: '#1c1917', 
+                950: '#000000', 
               },
               gold: {
                 100: '#fef3c7',
                 400: '#fbbf24',
-                500: '#967336', // Alinhado com a cor da marca
+                500: '#967336',
                 600: '#b4941f',
               }
             }
@@ -55,7 +53,7 @@
       }
     </script>
 
-    <!-- Google Fonts: Playfair Display (Serif) & Lato (Sans) -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
@@ -63,7 +61,7 @@
     <style>
       body {
         font-family: 'Lato', sans-serif;
-        background-color: #ffffff; /* Fundo Branco solicitado */
+        background-color: #ffffff;
         color: #44403c;
       }
       h1, h2, h3, h4, h5, h6 {
@@ -73,21 +71,20 @@
   <script type="importmap">
 {
   "imports": {
-    "react": "https://esm.sh/react@18.2.0",
-    "react/jsx-runtime": "https://esm.sh/react@18.2.0/jsx-runtime",
-    "react-dom/client": "https://esm.sh/react-dom@18.2.0/client?deps=react@18.2.0",
-    "react-dom": "https://esm.sh/react-dom@18.2.0?deps=react@18.2.0",
-    "react-router-dom": "https://esm.sh/react-router-dom@6.22.0?deps=react@18.2.0,react-dom@18.2.0",
-    "lucide-react": "https://esm.sh/lucide-react@0.344.0?deps=react@18.2.0",
-    "framer-motion": "https://esm.sh/framer-motion@11.0.8?deps=react@18.2.0,react-dom@18.2.0",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
     "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
-    "react/": "https://aistudiocdn.com/react@^19.2.0/"
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
+    "framer-motion": "https://aistudiocdn.com/framer-motion@^12.23.25",
+    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.9.6",
+    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.1",
+    "vite": "https://aistudiocdn.com/vite@^7.2.6"
   }
 }
 </script>
 </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="./index.tsx"></script>
+    <script type="module" src="/index.tsx"></script>
   </body>
 </html>
